@@ -1,0 +1,11 @@
+.DS_store
+.elixir_ls
+.local
+.vscode
+
+/lib
+/tmp
+
+Brewfile.lock.json
+SCRATCH.md
+vendir.lock.yml

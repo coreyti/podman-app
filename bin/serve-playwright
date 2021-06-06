@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+podman run --rm \
+  -e "DEBUG=pw:*" \
+  -e "CONNECTION_TIMEOUT=90000" \
+  -p 3000:3000 \
+  --name playwright \
+  localhost/geometer/playwright:browserless-9.1.1

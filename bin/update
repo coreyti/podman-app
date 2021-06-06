@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+install_podman() {
+  mkdir -p ${PROJECT}/.local/bin
+
+  pushd ${PROJECT}/lib/github.com/containers/podman > /dev/null
+    make podman-remote-darwin
+    mv bin/darwin/podman ${PROJECT}/.local/bin/
+  popd > /dev/null
+}
+
+main() {
+  : ${PROJECT:?'unset - `direnv allow` first'}
+  brew bundle --file ${PROJECT}/Brewfile
+  vendir sync -f ${PROJECT}/vendir.yml
+  install_podman
+}
+
+main "$@"
