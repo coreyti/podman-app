@@ -1,5 +1,5 @@
 ---
-head: Bootstrap
+head: Bootstrap part 2
 ---
 
 # Changelog
@@ -18,6 +18,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - `ws-sync` wraps `ergo-bundle` and adds workspace-specific sync/installation.
 - `podman` is managed via `vendir` (mainly because the current `brew` version is not an **exact** match for the server version).
 
+### Updated
+
+- Hopefully, the change content to reflect this project's changes, rather than those of the parent [`ergonomic`](https://github.com/coreyti/ergonomic) workspace.
 
 ### Footnotes
 
