@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+main() {
+  : ${PROJECT:?'unset - `direnv allow` first'}
+  multipass launch -c 2 -m 2G -d 10G -n podman 20.10 \
+    --cloud-init ${WORKSPACE}/etc/cloud-init.yml
+
+  multipass exec podman -- systemctl --user enable podman.socket
+  multipass exec podman -- systemctl --user start podman.socket
+}
+
+main "$@"
